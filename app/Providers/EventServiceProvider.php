@@ -22,6 +22,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\BlogCreatedEvent' => [
             'App\Listeners\SendCreatedBlogEmailNotification',
         ],
+
+        'App\Events\BlogPublishedEvent' => [
+            'App\Listeners\SendPublishedBlogEmailNotification',
+        ],
     ];
 
     /**

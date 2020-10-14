@@ -24,3 +24,4 @@ Route::namespace('Auth')->group(function(){
 });
 
 Route::post('blog','BlogController@store');
+Route::put('blog/{id}','BlogController@published');

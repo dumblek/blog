@@ -19,7 +19,6 @@ class CreateBlogsTable extends Migration
             $table->string('body');
             $table->boolean('publish_status')->default(0);
             $table->unsignedBigInteger('user_id');
-            $table->bigInteger('editor_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

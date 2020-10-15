@@ -28,18 +28,17 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        
         request()->validate([
             'title' => 'required',
             'body' => ['required'],
-            'editor_id' => 'required',
         ]);
-
+        
         $user = auth()->user();
-
+        
         $blog = $user->blogs()->create([
             'title' => request('title'),
             'body' => request('body'),
-            'editor_id' => request('editor_id'),
         ]);
 
         event(new BlogCreatedEvent($user, $blog));

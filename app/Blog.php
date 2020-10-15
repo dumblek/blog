@@ -12,9 +12,4 @@ class Blog extends Model
     {
         return $this->belongsTo('App\User');
     }
-
-    public function editor()
-    {
-        return $this->belongsTo('App\User','editor_id');
-    }
 }
